@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Code Review Tool</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="workspace">
+        <header>
+          <h1>AI Code Review Tool</h1>
+          <p>Static-first review for small files and snippets.</p>
+        </header>
+
+        <label for="filePath">File path</label>
+        <input id="filePath" value="snippet.py" />
+
+        <label for="codeInput">Paste code</label>
+        <textarea id="codeInput" spellcheck="false">def run_user_input(value):
+    return eval(value)</textarea>
+
+        <div class="actions">
+          <input id="fileInput" type="file" />
+          <button id="reviewButton">Run review</button>
+        </div>
+      </section>
+
+      <section class="results">
+        <div class="results-header">
+          <h2>Review Results</h2>
+          <span id="status">Idle</span>
+        </div>
+        <div id="summary" class="summary"></div>
+        <div id="issues" class="issues"></div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
