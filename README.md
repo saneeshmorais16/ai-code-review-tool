@@ -33,6 +33,14 @@ The app demonstrates practical software engineering around AI-adjacent tooling: 
 - SQLite review history.
 - Simple browser frontend.
 
+## Demo Placeholder
+
+Screenshots or a short demo GIF can be added after running the browser UI with synthetic snippets only.
+
+## Honest Project Status
+
+This is a portfolio starter project, not a production code-review platform. It demonstrates local-first static analysis, structured output, and optional LLM integration boundaries.
+
 ## Architecture Overview
 
 ```text

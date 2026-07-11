@@ -21,3 +21,5 @@ secrets/
 credentials/
 local_repos/
 uploads/
+private_documents/
+local_data/
