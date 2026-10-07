@@ -37,6 +37,8 @@ The app demonstrates practical software engineering around AI-adjacent tooling: 
 
 Screenshots or a short demo GIF can be added after running the browser UI with synthetic snippets only.
 
+The repository includes `examples/offline_demo_review_output.json`, a structured sample response generated from `examples/vulnerable_example.py` while offline demo mode is active.
+
 ## Honest Project Status
 
 This is a portfolio starter project, not a production code-review platform. It demonstrates local-first static analysis, structured output, and optional LLM integration boundaries.

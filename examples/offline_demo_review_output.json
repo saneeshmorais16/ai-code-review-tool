@@ -1,0 +1,61 @@
+{
+  "id": null,
+  "summary": {
+    "files_reviewed": 1,
+    "issue_count": 4,
+    "by_severity": {
+      "low": 1,
+      "high": 1,
+      "info": 2
+    },
+    "by_category": {
+      "maintainability": 2,
+      "security": 1,
+      "testing gaps": 1
+    }
+  },
+  "files": [
+    {
+      "file_path": "examples/vulnerable_example.py",
+      "language": "python"
+    }
+  ],
+  "issues": [
+    {
+      "issue_type": "todo_or_fixme",
+      "category": "maintainability",
+      "severity": "low",
+      "file_path": "examples/vulnerable_example.py",
+      "line_number": 2,
+      "explanation": "TODO/FIXME marker found.",
+      "suggested_fix": "Convert this marker into a tracked task or resolve it before release."
+    },
+    {
+      "issue_type": "risky_dynamic_execution",
+      "category": "security",
+      "severity": "high",
+      "file_path": "examples/vulnerable_example.py",
+      "line_number": 3,
+      "explanation": "Dynamic code execution can allow code injection or unexpected behavior.",
+      "suggested_fix": "Replace dynamic execution with explicit parsing or a restricted command map."
+    },
+    {
+      "issue_type": "testing_gap",
+      "category": "testing gaps",
+      "severity": "info",
+      "file_path": "examples/vulnerable_example.py",
+      "line_number": null,
+      "explanation": "No obvious test assertions were found in this snippet.",
+      "suggested_fix": "Add focused tests for expected behavior and edge cases."
+    },
+    {
+      "issue_type": "offline_demo_ai_review",
+      "category": "maintainability",
+      "severity": "info",
+      "file_path": "examples/vulnerable_example.py",
+      "line_number": null,
+      "explanation": "Offline demo mode is active. No code was sent to an external AI provider.",
+      "suggested_fix": "Set AI_REVIEW_MODE=live and configure a provider API key only after reviewing privacy and data-handling requirements. Human review is still required."
+    }
+  ]
+}
