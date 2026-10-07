@@ -28,7 +28,7 @@ The app demonstrates practical software engineering around AI-adjacent tooling: 
 - File upload review.
 - Language detection for Python, JavaScript, TypeScript, HTML, and CSS.
 - Static checks for long functions, secret-like values, missing error handling, risky `eval`/`exec`, TODO/FIXME markers, duplicate code hints, and testing gaps.
-- Optional LLM review wrapper that stays disabled unless configured.
+- Optional AI provider integration through environment variables, with `offline_demo` mode enabled by default.
 - Structured review output.
 - SQLite review history.
 - Simple browser frontend.
@@ -136,6 +136,20 @@ curl -X POST "http://127.0.0.1:8000/review/code" \
   -d '{"file_path":"demo.py","code":"print(eval(\"1+1\"))"}'
 ```
 
+## AI provider configuration
+
+The app never executes submitted code. Static checks always run locally. Optional AI feedback is controlled by environment variables:
+
+```text
+AI_REVIEW_MODE=offline_demo  # default: labelled demo feedback, no external request
+AI_REVIEW_MODE=live          # opt in to a configured provider
+LLM_PROVIDER=openai          # or anthropic
+OPENAI_API_KEY=...
+ANTHROPIC_API_KEY=...
+```
+
+Offline demo mode is intentionally explicit in the returned issue list. Live mode sends the submitted snippet to the configured provider, so use it only after reviewing privacy, security and data-handling requirements.
+
 ## Run Tests
 
 ```bash
@@ -147,7 +161,10 @@ GitHub Actions runs the same test command on pushes and pull requests.
 ## Responsible AI and Limitations
 
 - This starter version uses local static rules by default.
-- Optional LLM review is a placeholder wrapper and does not send code to external providers.
+- Offline demo mode does not send code to external providers.
+- Live AI review requires explicit API-key configuration and should not be used with private or sensitive code unless appropriate controls are in place.
+- AI-generated feedback is advisory and must be checked by a human before changes are applied.
+- Submitted code is analysed as text only; it is never executed.
 - Static checks can produce false positives and false negatives.
 - Do not use this project to review private repositories or sensitive code without explicit data handling controls.
 - This project does not claim production readiness or commercial use.
